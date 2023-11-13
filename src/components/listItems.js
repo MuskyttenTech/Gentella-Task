@@ -168,9 +168,20 @@ const MainListItems = ({ open }) => {
   });
 };
 
+
+
+
+
+
+
   return (
     <>
-      <ListItemButton onClick={() => handleCollapse("home")} sx={{ marginBottom: 0 }}>
+      <ListItemButton
+        onClick={() => handleCollapse("home")}
+        sx={{
+          borderRight: open && isOpen["home"] ? "5px solid #1ABB9C" : "none",
+        }}
+      >
         <ListItemIcon sx={{ marginBottom: "0", marginRight: "4px" }}>
           <HouseIcon sx={{ color: "#E7E7E7", marginBottom: "6px" }} />
         </ListItemIcon>
@@ -206,7 +217,12 @@ const MainListItems = ({ open }) => {
         <DropDown steps={HomeData} />
       </Collapse>
 
-      <ListItemButton onClick={() => handleCollapse("forms")}>
+      <ListItemButton
+        onClick={() => handleCollapse("forms")}
+        sx={{
+          borderRight: open && isOpen["forms"] ? "5px solid #1ABB9C" : "none",
+        }}
+      >
         <ListItemIcon sx={{ marginBottom: "0", marginRight: "4px" }}>
           <EditIcon sx={{ color: "#E7E7E7", marginBottom: "6px" }} />
         </ListItemIcon>
@@ -242,7 +258,13 @@ const MainListItems = ({ open }) => {
         <DropDown steps={FormData} />
       </Collapse>
 
-      <ListItemButton onClick={() => handleCollapse("uIElements")}>
+      <ListItemButton
+        onClick={() => handleCollapse("uIElements")}
+        sx={{
+          borderRight:
+            open && isOpen["uIElements"] ? "5px solid #1ABB9C" : "none",
+        }}
+      >
         <ListItemIcon sx={{ marginBottom: "0", marginRight: "4px" }}>
           <DesktopMacOutlinedIcon
             sx={{ color: "#E7E7E7", marginBottom: "6px" }}
@@ -280,7 +302,12 @@ const MainListItems = ({ open }) => {
         <DropDown steps={UIElement} />
       </Collapse>
 
-      <ListItemButton onClick={() => handleCollapse("tables")}>
+      <ListItemButton
+        onClick={() => handleCollapse("tables")}
+        sx={{
+          borderRight: open && isOpen["tables"] ? "5px solid #1ABB9C" : "none",
+        }}
+      >
         <ListItemIcon sx={{ marginBottom: "0", marginRight: "4px" }}>
           <CalendarViewMonthOutlinedIcon
             sx={{ color: "#E7E7E7", marginBottom: "6px" }}
@@ -318,7 +345,13 @@ const MainListItems = ({ open }) => {
         <DropDown steps={Tables} />
       </Collapse>
 
-      <ListItemButton onClick={() => handleCollapse("dataPresentation")}>
+      <ListItemButton
+        onClick={() => handleCollapse("dataPresentation")}
+        sx={{
+          borderRight:
+            open && isOpen["dataPresentation"] ? "5px solid #1ABB9C" : "none",
+        }}
+      >
         <ListItemIcon sx={{ marginBottom: "0", marginRight: "4px" }}>
           <BarChartIcon sx={{ color: "#E7E7E7", marginBottom: "6px" }} />
         </ListItemIcon>
@@ -356,7 +389,13 @@ const MainListItems = ({ open }) => {
         <DropDown steps={DataPresentation} />
       </Collapse>
 
-      <ListItemButton onClick={() => handleCollapse("additionalPages")}>
+      <ListItemButton
+        onClick={() => handleCollapse("additionalPages")}
+        sx={{
+          borderRight:
+            open && isOpen["additionalPages"] ? "5px solid #1ABB9C" : "none",
+        }}
+      >
         <ListItemIcon sx={{ marginBottom: "0", marginRight: "4px" }}>
           <PestControlIcon sx={{ color: "#E7E7E7", marginBottom: "6px" }} />
         </ListItemIcon>
@@ -392,7 +431,12 @@ const MainListItems = ({ open }) => {
         <DropDown steps={AdditionalPage} />
       </Collapse>
 
-      <ListItemButton onClick={() => handleCollapse("extras")}>
+      <ListItemButton
+        onClick={() => handleCollapse("extras")}
+        sx={{
+          borderRight: open && isOpen["extras"] ? "5px solid #1ABB9C" : "none",
+        }}
+      >
         <ListItemIcon sx={{ marginBottom: "0", marginRight: "4px" }}>
           <DashboardIcon sx={{ color: "#E7E7E7", marginBottom: "6px" }} />
         </ListItemIcon>
@@ -428,7 +472,7 @@ const MainListItems = ({ open }) => {
         <DropDown steps={ExtrasError} />
       </Collapse>
 
-      <ListItemButton onClick={() => handleCollapse("landingPage")}>
+      <ListItemButton onClick={() => handleCollapse("landingPage")} >
         <ListItemIcon sx={{ marginBottom: "0", marginRight: "4px" }}>
           <LaptopMacOutlinedIcon
             sx={{ color: "#E7E7E7", marginBottom: "6px" }}
