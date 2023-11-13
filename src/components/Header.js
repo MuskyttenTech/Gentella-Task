@@ -103,7 +103,7 @@ const SectionWithDivider = ({
         <Box>
           <Typography
             sx={{
-              fontFamily: "Helvetica Neue",
+              fontFamily:"Arial",
               fontSize: "15px",
               fontWeight: "500",
               color:'#73879C',
@@ -113,14 +113,14 @@ const SectionWithDivider = ({
             color="text.disabled"
             
           >
-            <Icon sx={{ fontSize: "10px", marginRight: "2px", top: "2px" }} color="#585858" />
+            <Icon sx={{ fontSize: "12px", marginRight: "2px", top: "2px" }} color="#585858" />
             {title}
           </Typography>
         </Box>
         <Box>
           <Typography
             sx={{
-              fontFamily: "Helvetica Neue,sans-serif",
+              fontFamily:"Arial",
               fontSize: 28,
               fontWeight: "bold",
               color: value === "2,500" ? "#20c997" : color,
@@ -135,7 +135,7 @@ const SectionWithDivider = ({
       <Box display="flex">
         <Typography
           sx={{
-            fontFamily: "Helvetica Neue",
+            fontFamily:"Arial",
             fontSize: 11,
             paddingRight: 1,
             color: percentage === "12%" ? "#dc3545" : "#28a745",
@@ -153,18 +153,13 @@ const SectionWithDivider = ({
           {percentage}
         </Typography>
         <Typography
-          variant="h6"
           gutterBottom
           component="div"
           color="text.disabled"
-          
-          sx={{
-            fontFamily: "Helvetica Neue, sans-serif",
-            fontSize: 11,
-            fontWeight: "500",
-            color:'#73879C',
-            whiteSpace: "nowrap",
-          }}
+          fontFamily="Arial"
+          fontSize= '11px'
+          fontWeight= "500"
+          whiteSpace= "nowrap"
         >
           From last Week
         </Typography>

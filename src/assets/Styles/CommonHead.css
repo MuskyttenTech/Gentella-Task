@@ -1,0 +1,42 @@
+.quick-settings {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.title-box {
+  padding-top: 20px;
+  margin-left: 20px;
+  width: 50%; 
+}
+
+.title {
+   font-family:  Arial, sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  color: #73879c;
+
+}
+
+.icons-box {
+  width: 20%; 
+  margin-top: 20px; 
+  margin-right:25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.build-icon {
+  font-size: 20px; 
+  color: #D0D0D0;
+  transform: rotate(95deg);
+  padding: 2px;
+}
+
+.divider {
+  width: 90%;
+  background-color: #D0D0D0;
+}

@@ -15,6 +15,9 @@ import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import MenuIcon from "@mui/icons-material/Menu";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import SpeedometerComponent from "./SpeedometerComponent";
+import '../assets/Styles/QuickSettings.css'
+import Head from './Head'
+
 
 const iconList = [
   CalendarTodayIcon,
@@ -29,51 +32,12 @@ const iconList = [
 const QuickSettings = () => {
   return (
     <Box>
-      <Box
-        sx={{padding:"3px 6px 3px 8px" }}
-        display="flex"
-        justifyContent="space-between"
-        alignItems="center"
-      >
-        <Box sx={{ marginLeft:"16px" }}>
-          <Typography
-            sx={{
-              fontFamily: "Helvetica Neue",
-              fontSize: "1.50rem",
-              fontWeight: "normal",
-              color: "#73879C",
+      <Head HeadData="Quick Settings" />
 
-            }}
-            variant="h6"
-            component="div"
-          >
-            Quick Settings
-          </Typography>
-        </Box>
-        <Box
-         sx={{ marginRight: 2 }}
-          display="flex"
-          justifyContent="space-between"
-          alignItems="center"
-        >
-          <KeyboardArrowUpIcon
-            sx={{ fontSize: 25, color: "#73879C", fontWeight: "900", padding: "2px" }}
-          />
-          <BuildIcon
-            sx={{
-              fontSize: "20px",
-              color: "#D0D0D0",
-              transform: "rotate(95deg)",
-              padding: "2px"
-            }}
-          />
-          <CloseIcon sx={{ fontSize: "20px", color: "#73879C", padding: "2px" }} />
-        </Box>
-      </Box>
-      <Divider variant="middle" sx={{ width: "90%", bgcolor: "#D0D0D0" }} />
+      <Divider variant="middle" className="divider" />
 
-      <Box display="flex" sx={{ paddingLeft: "20px" }}>
-        <List sx={{ bgcolor: "background.paper", height: '260px',padding:"21px" }}>
+      <Box className="list-container">
+        <List className="list">
           {[
             "Settings",
             "Subscription",
@@ -83,63 +47,28 @@ const QuickSettings = () => {
             "Achievements",
             "Logout",
           ].map((text, index) => (
-            <ListItem
-              key={text}
-              disablePadding
-              sx={{ display: "flex", padding:"0px 0px 6px 0px" }}
-            >
-              <ListItemIcon>
+            <ListItem key={text} disablePadding className="list-item">              
+              <ListItemIcon >
                 {React.createElement(iconList[index % iconList.length], {
-                  style: { color: "#5A738E", fontSize: "16px" },
+                  className: "list-item-icon",
                 })}
               </ListItemIcon>
               <Box >
-                <Typography
-                  sx={{
-                    color: "#5A738E",
-                    fontSize: '14px',
-                    fontWeight: '500',
-                    fontFamily: "Helvetica Neue",
-                   
-                  }}
-                >
-                  {text}
-                </Typography>
+                <Typography className="list-item-text"  fontSize= "13px" fontWeight= "500" fontFamily="Arial"> {text} </Typography>
               </Box>
             </ListItem>
           ))}
         </List>
 
-        <Box
-          sx={{
-            border: "1px solid #1CBD9C",
-            marginLeft: '20px',
-            padding: '10px',
-            height: '160px',  
-            marginTop:'35px' ,
-            marginRight:'20px'
-          }}
-        >
-          <Typography
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              fontSize: '16px',
-              fontWeight: '500',
-              color: '#73879C',
-              fontFamily: "Helvetica Neue",
-            }}
-          >
+        <Box className="additional-box">
+        
+          <Typography className="profile-completion-text" fontFamily="Arial">
             Profile Completion
           </Typography>
           <SpeedometerComponent />
-          <Box
-            display="flex"
-            sx={{ justifyContent: "space-between", alignItems: "center" }}
-          >
-            <Typography sx={{ fontSize: '16px', fontWeight: '500', color: '#73879C', }}>3,200%</Typography>
-            <Typography sx={{ fontSize: '16px', fontWeight: '500', color: '#73879C', }}>100%</Typography>
+          <Box className="speedometer-box">
+            <Typography className="percentage-text" fontFamily="Arial">3,200%</Typography>
+            <Typography className="percentage-text" fontFamily="Arial">100%</Typography>
           </Box>
         </Box>
 

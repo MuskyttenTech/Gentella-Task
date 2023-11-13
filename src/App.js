@@ -22,6 +22,8 @@ import store from './redux/store';
 import { Provider } from 'react-redux';
 import Avatar from "@mui/material/Avatar";
 import image5 from "./components/Images/image5.jpg";
+import '../src/assets/Styles/AppStyle.css'
+
 
 function Copyright(props) {
   return (
@@ -105,8 +107,8 @@ export default function App() {
         <Box sx={{ display: 'flex' }}>
           <CssBaseline />
           <AppBar position="absolute" open={open} sx={{ backgroundColor: '#EDEDED', height: '55px' }}>
-            <Toolbar sx={{ pr: '24px', justifyContent: 'space-between' }}>
-              <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            <Toolbar className='toolbar-style'>
+              <Box className='toobar-container'>
                 <IconButton
                   edge="start"
                   color="inherit"
@@ -114,53 +116,95 @@ export default function App() {
                   onClick={open ? handleDrawerClose : handleDrawerOpen}
                   sx={{ marginRight: '12px' }}
                 >
-                  <MenuIcon sx={{ fontSize: '30px', color: '#73879C' }} />
+                  <MenuIcon className='menuIcon'/>
                 </IconButton>
               </Box>
-              <Box sx={{ display: 'flex', alignItems: 'center' }}>
+              <Box className='mailContainer'>
                 <IconButton color="inherit">
                   <Badge badgeContent={4} color="secondary">
-                    <MailOutlineIcon sx={{ fontSize: '20px', color: '#5A738E' }} />
+                    <MailOutlineIcon className='mailIcon'/>
                   </Badge>
                 </IconButton>
-                <Box sx={{ display: 'flex', alignItems: 'center', pb: "10px" }}>
+                <Box className='profileContainer'>
                   <Avatar src={image5} alt="John Doe" sx={{ ml: 2, mr: 1 }} />
-                  <Typography sx={{ fontSize: '15px', fontWeight: '400', fontFamily: "Helvetica Neue", color: '#5A738E'}}>John Doe</Typography>
-                  <ArrowDropDownIcon sx={{ fontSize: '20px', color: '#5A738E' }} />
+                  <Typography fontSize='15px'fontWeight='400' fontFamily= "Arial" color= '#5A738E'>John Doe</Typography>
+                  <ArrowDropDownIcon className='arrowIcon' />
                 </Box>
               </Box>
             </Toolbar>
           </AppBar>
           <Drawer variant="permanent" open={open}>
-            <Toolbar sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', padding: '10px' }}>
-              <Box
+          <Toolbar className="toolbar">
+              <Box className="sidebar">
+                <PetsOutlinedIcon sx={{ color: "#ECF0F1", margin: "5px" }} />
+              </Box>
+              <Typography
                 sx={{
-                  borderRadius: '50%',
-                  height: '40px',
-                  width: '50px',
-                  border: '2px solid #fff',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  
+                  marginLeft: "10px",
+                  fontSize: "22px",
+                  fontWeight: "400",
+                  color: "#ECF0F1",
+                  fontFamily: "Arial",
                 }}
               >
-                <PetsOutlinedIcon sx={{ color: '#ECF0F1', margin: '5px' }} />
-              </Box>
-              <Typography sx={{ marginLeft: '10px', fontSize: '22px', fontWeight: '400', color: "#ECF0F1", fontFamily: "Helvetica Neue" }}>Gentelella Alela!</Typography>
+                Gentelella Alela!
+              </Typography>
             </Toolbar>
-            <Box sx={{ display: open ? 'flex' :'none', alignItems: 'center', mt: '20px'  }}>
-              <Avatar src={image5} alt="John Doe" sx={{ ml: 2, mr: 1, border: '4px solid #fff', width: '50px', height: '50px', opacity: open ? 1 : 0 }} />
-              <Box sx={{ display: 'block', paddingLeft: '10px' }}>
-                <Typography sx={{ display: 'flex', alignItems: 'center', color: '#BAB8B8', fontSize: '13px', fontFamily: "Helvetica Neue" }}>
+            <Box
+              sx={{
+                display: open ? "flex" : "none",
+                alignItems: "center",
+                mt: "20px",
+              }}
+            >
+              <Avatar
+                src={image5}
+                alt="John Doe"
+                className="sidebarAvatar"
+                sx={{ opacity: open ? 1 : 0 }}
+              />
+              <Box className="sidebarListContainer">
+                <Typography
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    color: "#BAB8B8",
+                    fontSize: "13px",
+                    fontFamily: "Arial",
+                  }}
+                >
                   Welcome,
                 </Typography>
-                <Typography sx={{ display: 'flex', alignItems: 'center', color: '#ECF0F1', fontSize: '15px', fontFamily: "Helvetica Neue", fontWeight: '300' }}>
+                <Typography
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    color: "#ECF0F1",
+                    fontSize: "15px",
+                    fontFamily: "Arial",
+                    fontWeight: "300",
+                  }}
+                >
                   John Doe
                 </Typography>
               </Box>
             </Box>
-            <Typography sx={{ paddingLeft: '23px', color: '#fff', fontSize: '12px', fontWeight: '400', letterSpacing: '.6px', fontFamily: "Helvetica Neue", mt: '20px', mb: '10px', opacity: open ? 1 : 0,display: open ? 'block' : 'none', }}>GENERAL</Typography>
+            <Typography
+              sx={{
+                paddingLeft: "23px",
+                color: "#fff",
+                fontSize: "12px",
+                fontWeight: "400",
+                letterSpacing: ".6px",
+                fontFamily: "Arial",
+                mt: "20px",
+                mb: "10px",
+                opacity: open ? 1 : 0,
+                display: open ? "block" : "none",
+              }}
+            >
+              GENERAL
+            </Typography>
             <Divider />
             <List component="nav">
               {MainListItems({ open })}
@@ -171,7 +215,7 @@ export default function App() {
             component="main"
             sx={{
               backgroundColor: (theme) =>
-                theme.palette.mode === 'light'
+                theme.palette.mode === "light"
                   ? theme.palette.grey[100]
                   : theme.palette.grey[900],
               flexGrow: 1,

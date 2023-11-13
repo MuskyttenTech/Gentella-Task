@@ -42,7 +42,7 @@ export default function VerticalLinearStepper({ steps }) {
                 sx={{
                   color: "#E7E7E7",
                   fontSize: "12px",
-                  fontFamily: "Helvetica Neue",
+                  fontFamily: "Arial",
                   
                 }}
               >

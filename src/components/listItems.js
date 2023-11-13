@@ -2,19 +2,13 @@ import * as React from "react";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import Typography from "@mui/material/Typography";
-import ListSubheader from "@mui/material/ListSubheader";
 import DashboardIcon from "@mui/icons-material/Dashboard";
-
 import BarChartIcon from "@mui/icons-material/BarChart";
-
 import HouseIcon from "@mui/icons-material/House";
 import EditIcon from "@mui/icons-material/Edit";
 import ExpandMoreOutlinedIcon from "@mui/icons-material/ExpandMoreOutlined";
-
 import DesktopMacOutlinedIcon from "@mui/icons-material/DesktopMacOutlined";
 import CalendarViewMonthOutlinedIcon from "@mui/icons-material/CalendarViewMonthOutlined";
-
 import LaptopMacOutlinedIcon from "@mui/icons-material/LaptopMacOutlined";
 import PestControlIcon from "@mui/icons-material/PestControl";
 
@@ -168,12 +162,6 @@ const MainListItems = ({ open }) => {
   });
 };
 
-
-
-
-
-
-
   return (
     <>
       <ListItemButton
@@ -196,7 +184,7 @@ const MainListItems = ({ open }) => {
           primaryTypographyProps={{
             style: {
               fontSize: "15px",
-              fontFamily: "Helvetica Neue",
+              fontFamily: "Arial",
             },
           }}
         />
@@ -237,7 +225,7 @@ const MainListItems = ({ open }) => {
           primaryTypographyProps={{
             style: {
               fontSize: "15px",
-              fontFamily: "Helvetica Neue",
+              fontFamily: "Arial",
             },
           }}
         />
@@ -281,7 +269,7 @@ const MainListItems = ({ open }) => {
           primaryTypographyProps={{
             style: {
               fontSize: "15px",
-              fontFamily: "Helvetica Neue",
+              fontFamily: "Arial",
             },
           }}
         />
@@ -324,7 +312,7 @@ const MainListItems = ({ open }) => {
           primaryTypographyProps={{
             style: {
               fontSize: "15px",
-              fontFamily: "Helvetica Neue",
+              fontFamily: "Arial",
             },
           }}
         />
@@ -366,7 +354,7 @@ const MainListItems = ({ open }) => {
           primaryTypographyProps={{
             style: {
               fontSize: "15px",
-              fontFamily: "Helvetica Neue",
+              fontFamily: "Arial",
             },
           }}
         />
@@ -410,7 +398,7 @@ const MainListItems = ({ open }) => {
           primaryTypographyProps={{
             style: {
               fontSize: "15px",
-              fontFamily: "Helvetica Neue",
+              fontFamily: "Arial",
             },
           }}
         />
@@ -451,7 +439,7 @@ const MainListItems = ({ open }) => {
           primaryTypographyProps={{
             style: {
               fontSize: "15px",
-              fontFamily: "Helvetica Neue",
+              fontFamily: "Arial",
             },
           }}
         />
@@ -489,7 +477,7 @@ const MainListItems = ({ open }) => {
           primaryTypographyProps={{
             style: {
               fontSize: "15px",
-              fontFamily: "Helvetica Neue",
+              fontFamily: "Arial",
             },
           }}
         />

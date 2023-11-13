@@ -1,15 +1,13 @@
 // DoughnutChart.js
 import React, { useRef, useEffect } from "react";
-import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import BuildIcon from "@mui/icons-material/Build";
-import CloseIcon from "@mui/icons-material/Close";
 import Typography from "@mui/material/Typography";
-import Divider from "@mui/material/Divider";
 import Chart from "chart.js/auto";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchDoughnutChartData } from "../redux/action";
+import '../assets/Styles/DoughnutChart.css'
+import Head from "./Head";
 
 const DoughnutChart = () => {
   const chartRef = useRef(null);
@@ -70,6 +68,7 @@ const DoughnutChart = () => {
               boxWidth: 15,
               padding: 20,
               fontFamily: " Helvetica Neue, sans-serif",
+              // fontSize: "15px",
             },
           },
           tooltip: {
@@ -81,6 +80,8 @@ const DoughnutChart = () => {
                 const dataIndex = context.dataIndex;
                 const label = chartData.labels[dataIndex];
                 const value = chartData.datasets[0].data[dataIndex];
+                console.log(label);
+                console.log(value);
                 return `${label}: ${value}`;
               },
             },
@@ -99,127 +100,50 @@ const DoughnutChart = () => {
 
   return (
     <Box>
-      <Box
-        sx={{padding:"3px 6px 3px 8px" }}
-        display="flex"
-        justifyContent="space-between"
-        alignItems="center"
-      >
-        <Box sx={{ marginLeft:"16px" }}>
-          <Typography
-            sx={{
-              fontFamily: "Helvetica Neue",
-              fontSize: "1.50rem",
-              fontWeight: "normal",
-              color: "#73879C",
+      <Head HeadData={"Device Usage"} />
 
-            }}
-            variant="h6"
-            component="div"
-          >
-            Device Usage
-          </Typography>
-        </Box>
-        <Box
-         sx={{ marginRight: 2 }}
-          display="flex"
-          justifyContent="space-between"
-          alignItems="center"
-        >
-          <KeyboardArrowUpIcon
-            sx={{ fontSize: 25, color: "#73879C", fontWeight: "900", padding: "2px" }}
-          />
-          <BuildIcon
-            sx={{
-              fontSize: "20px",
-              color: "#D0D0D0",
-              transform: "rotate(95deg)",
-              padding: "2px"
-            }}
-          />
-          <CloseIcon sx={{ fontSize: "20px", color: "#73879C", padding: "2px" }} />
-        </Box>
-      </Box>
-      <Divider variant="middle" sx={{ width: "90%", bgcolor: "#D0D0D0" }} />
-
-      <Box sx={{ width: "100%", height: "260px" }} display="flex" align-items="center">
-        <Box sx={{ marginLeft: 2, width: "60.5%", padding: 2 }}>
-          <Box
-            sx={{ width: "70%" }}
-            display="flex"
-            justifyContent="space-between"
-            alignItems="center"
-
-          >
-            <Typography
-              sx={{
-                fontFamily: "Helvetica Neue",
-                fontSize: "15px",
-                fontWeight: "700",
-              }}
-              variant="h6"
-              // gutterBottom
-              component="div"
-              color="#73879c"
-            >
+      <Box className="chart-box">
+        <Box className="chart-section">
+          <Box className="chart-info">
+            <Typography className="progress-text" variant="h6" component="div"  fontSize= "16px" fontWeight= "500" fontFamily="Arial">
               Top 5
             </Typography>
-            <Typography
-              sx={{
-                fontFamily: "Helvetica Neue",
-                fontSize: "15px",
-                fontWeight: "700",
-              }}
-              variant="h6"
-
-              component="div"
-              color="#73879c"
-            >
+            <Typography className="progress-text" variant="h6" component="div"  fontSize= "16px" fontWeight= "500" fontFamily="Arial">
               Device
             </Typography>
           </Box>
-         <div style={{marginBottom:'25px'}}>
-          <canvas id="myChart" ref={chartRef} style={{ width: "100%"}} />
-          </div>
+          <Box >
+            <canvas id="myChart" ref={chartRef} style={{ width: "100%" }} />
+          </Box>
         </Box>
-        <Box
-          sx={{
-            padding: "16px",
-          }}
-          display="flex"
-          flexDirection="column"  // Change to column layout
-          alignItems="center"     // Center the items horizontally
-        >
+        <Box className="progress-section">
           <Typography
-            sx={{
-              fontFamily: "Helvetica Neue",
-              fontSize: "15px",
-              fontWeight: "700",
-            }}
+            className="progress-text progress-title"
             variant="h6"
             gutterBottom
             component="div"
-            color="#73879c"
+            fontSize= "16px" fontWeight= "500"
+            fontFamily="Arial"
           >
             Progress
           </Typography>
-          <Box display="flex">
+          <Box className="progress-grid">
             <Grid
               container
               direction="column"
               justifyContent="center"
               alignItems="center"
               spacing={1.2}
-              style={{padding:'21px 0px 0px 0px '}}
+              style={{ padding: "21px 0px 0px 0px " }}
             >
               {["30%", "10%", "20%", "15%", "30%"].map((label, index) => (
-                <Grid item key={index} style={{paddingTop:'4.6px'}}>
+                <Grid item key={index} style={{ paddingTop: "4.6px" }}>
                   <Typography
                     sx={{
-                      fontFamily: "Helvetica Neue",
                       fontSize: 15,
                       fontWeight: "400",
                       paddingRight: "2px",
+                      fontFamily:"Arial"
                     }}
                     variant="h6"
                     gutterBottom
@@ -233,8 +157,6 @@ const DoughnutChart = () => {
             </Grid>
           </Box>
         </Box>
-
-
       </Box>
     </Box>
   );

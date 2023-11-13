@@ -16,6 +16,8 @@ import {
 import CustomCalendar from "./CustomCalendar";
 import { fetchData } from '../redux/action';
 import { useDispatch, useSelector } from 'react-redux';
+import lineChartStyles  from '../assets/Styles/LineChartStyles.js'
+
 
 Chartjs.register(
   Title,
@@ -46,9 +48,6 @@ const LineChart = ({ drawerWidth }) => {
   if (!chartData || !campaignNames) {
     return <div>Loading...</div>;
   }
-
-
- 
 
   const toggleCalendar = () => {
     setShowCalendar(!showCalendar);
@@ -84,61 +83,27 @@ const LineChart = ({ drawerWidth }) => {
   };
 
   return (
-    <Box >
-      <Box
-        sx={{
-          
-          display: "flex",
-          justifyContent: "space-between",
-          borderBottom: "2px solid #E6E9ED",
-        }}
-      >
-        <Box sx={{ display: "flex", }}>
-          <Typography
-            sx={{
-              fontSize: "1.75rem",
-              padding: "10px",
-              color: "#73879C",
-              fontFamily: "Helvetica Neue",
-              fontWeight: "normal",
-            }}
-          >
+    <Box>
+      <Box sx={lineChartStyles.headerContainer}>
+        <Box sx={lineChartStyles.graphTitleContainer}>
+          <Typography sx={lineChartStyles.graphTitle}>
             Network Activities
           </Typography>
-          <Typography
-            sx={{
-              fontSize: "1.25rem",
-              padding: "5px",
-              p: 2.2,
-              fontWeight: "400",
-              color: "#73879C",
-              fontFamily: "Helvetica Neue",
-              height:10
-            }}
-          >
+          <Typography sx={lineChartStyles.graphSubtitle}>
             Graph title sub-title
           </Typography>
         </Box>
 
-        <Box
-          sx={{
-            border: "1px solid #ccc",
-            cursor: "pointer",
-            margin: "09px 11px",
-            background: "#fff",
-           
-          }}
-        >
+        <Box sx={lineChartStyles.calendarContainer}>
           <Button onClick={toggleCalendar}>
-          <CalendarMonthIcon sx={{marginTop:'2px',color: "#BDBDBD"}} />
-            <Typography sx={{ color: "#BDBDBD",marginTop:'4px',paddingLeft:'2px' }}>
+            <CalendarMonthIcon sx={lineChartStyles.calendarButton} />
+            <Typography sx={lineChartStyles.calendarText}>
               October 11, 2023 - November 9, 2023
             </Typography>
           </Button>
         </Box>
-
       </Box>
-      <Grid container sx={{ display: "flex" ,padding:"5px"}}>
+      <Grid container sx={lineChartStyles.gridContainer}>
       <Grid item md={12} lg={9} sx={{ height: "280px", paddingRight: "20px" }}>
           <Line
             data={chartData}
@@ -151,47 +116,19 @@ const LineChart = ({ drawerWidth }) => {
           />
         </Grid>
 
-        <Grid  item md={12} lg={3} sx={{ height: "300px",paddingRight: "20px" }}>
-          <Box sx={{ borderBottom: "2px solid #E6E9ED", mb:'10px'}}>
-            <Typography
-              sx={{
-                fontSize: "18px",
-                fontWeight: "400",
-                padding: "10px",
-                fontFamily: "Helvetica Neue",
-                color: "#73879C",
-              }}
-            >
-              Top Campaign Performance  
+        <Grid  item md={12} lg={3} sx={lineChartStyles.campaignContainer}>
+        <Box sx={lineChartStyles.campaignHeader}>
+            <Typography sx={lineChartStyles.campaignTitle}>
+              Top Campaign Performance
             </Typography>
           </Box>
           {campaignNames.map((name, index) => (
             <div key={index}>
-              <Typography
-                sx={{
-                  color: "#73879C",
-                  fontFamily: "Helvetica Neue",
-                  fontSize: "13px",
-                  fontWeight: "400",
-                  paddingLeft: "15px",
-                }}
-              >
-                {name}
-              </Typography>
+              <Typography sx={lineChartStyles.campaignName}>{name}</Typography>
               <LinearProgress
                 variant="determinate"
                 value={initialProgressValues[index]}
-                sx={{
-                  height: "10px",
-                  mb: "15px",
-                  mt:'5px',
-                  marginLeft: "15px",
-                  marginRight: "15px",
-                  backgroundColor: "#F5F5F5", 
-                  "& .MuiLinearProgress-bar": {
-                    backgroundColor: "#1ABB9C",
-                  },
-                }}
+                sx={lineChartStyles.linearProgress}
               />
             </div>
           ))}

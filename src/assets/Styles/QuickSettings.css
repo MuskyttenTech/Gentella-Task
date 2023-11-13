@@ -1,0 +1,98 @@
+/* QuickSettings.css */
+
+.quick-settings {
+    padding: 3px 6px 3px 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .title-box {
+    margin-left: 16px;
+  }
+  
+  .title {
+    font-family: "Helvetica Neue";
+    font-size: 1.50rem;
+    font-weight: normal;
+    color: #73879C;
+  }
+  
+  .icons-box {
+    margin-right: 2px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .build-icon{
+    font-size: "20px";
+    color: "#D0D0D0";
+    transform: "rotate(95deg)";
+    padding: "2px";
+  }
+
+  .divider{
+    width: "90%";
+    background-color: "#D0D0D0";
+  }
+  .list-container {
+    display: flex;
+    padding-left: 20px;
+  }
+  
+  .list {
+    background-color: #ffffff;
+    height: 260px;
+    padding: 21px;
+  }
+  
+  .list-item {
+    display: flex;
+    padding: 0px 0px 6px 0px;
+  }
+  
+  .list-item-icon {
+    color: #5A738E;
+    font-size: 16px;
+  }
+  
+  .list-item-text {
+    color: #5A738E;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: "Helvetica Neue";
+  }
+  
+  .additional-box {
+    border: 1px solid #1CBD9C;
+    margin-left: 20px;
+    padding: 10px;
+    height: 160px;
+    margin-top: 35px;
+    margin-right: 20px;
+  }
+  
+  .profile-completion-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: #73879C;
+    font-family: "Helvetica Neue";
+  }
+  
+  .speedometer-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .percentage-text {
+    font-size: 16px;
+    font-weight: 500;
+    color: #73879C;
+  }
+  /* Add other styles as needed */
+  
+  
